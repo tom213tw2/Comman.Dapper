@@ -16,7 +16,7 @@ namespace Comman.Dapper
 
         public void GetData()
         {
-         _connection.Get<>()
+         _connection.GetListAsync<>()
         }
     }
 }
