@@ -27,7 +27,7 @@ namespace Comman.Dapper
         /// <param name="tKey"></param>
         /// <param name="commandTimeout"></param>
         /// <returns>Returns a single entity by a single id from table TEntity</returns>
-        public TEntity Get(TKey tKey, int? commandTimeout) => Conn.Get<TEntity>(tKey, Context.Tran, commandTimeout);
+        public TEntity Get(TKey tKey, int? commandTimeout= null) => Conn.Get<TEntity>(tKey, Context.Tran, commandTimeout);
 
         /// <summary>
         /// <para>By default queries the table matching the class name asynchronously </para>
@@ -40,7 +40,7 @@ namespace Comman.Dapper
         /// <param name="id"></param>
         /// <param name="commandTimeout"></param>
         /// <returns>Returns a single entity by a single id from table TEntity</returns>
-        public async Task<TEntity> GetAsync(TKey id, int? commandTimeout = null) => await Conn.GetAsync<TEntity>(id, Context.Tran, commandTimeout);
+        public async Task<TEntity> GetAsync(TKey id, int? commandTimeout = null) => await Conn.GetAsync<TEntity>(id, Context.Tran, commandTimeout=null);
         /// <summary>
         /// <para>By default queries the table matching the class name</para>
         /// <para>-Table name can be overridden by adding an attribute on your class [Table("YourTableName")]</para>
